@@ -16,7 +16,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showAlert(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Alert", message: "Las alertas pueden aparecer en cualquier momento", preferredStyle: .alert) //Declaramos una alerta con titulo, mensaje y accion nula de completitud
         
+        self.present(alert, animated: true, completion: nil) //Con esto presentamos la alerta animada cuando presionemos el boton.
     }
     
 }
