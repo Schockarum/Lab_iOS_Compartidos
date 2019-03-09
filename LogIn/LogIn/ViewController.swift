@@ -36,6 +36,12 @@ class ViewController: UIViewController {
         view.endEditing(true)
         //ANIMACION, Desplazamiento de vistas
         super.viewDidAppear(animated)
+        
+        UIView.animate(withDuration: 0.5){
+            self.titleLabel.center.x = self.view.center.x
+            self.userTextField.center.x = self.view.center.x
+            self.passwordTextField.center.x = self.view.center.x
+        }
     }
     
     func setupUI() {
