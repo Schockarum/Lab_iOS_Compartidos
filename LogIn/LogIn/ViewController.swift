@@ -8,6 +8,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel! //Vamos a hacer una animación con éste título
     
+    @IBOutlet weak var imageView: UIImageView!
     
     let user = "Mauricio"
     let password = "1234"
@@ -30,19 +31,36 @@ class ViewController: UIViewController {
         userTextField.frame.origin.x = view.frame.origin.x - userTextField.frame.origin.x
         passwordTextField.frame.origin.x = view.frame.origin.x - passwordTextField.frame.origin.x
         
+        //Animaciones por nuestra cuenta
+        loginButton.center.y = view.frame.size.height
+        registerButton.center.y = view.frame.size.height
+        
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         view.endEditing(true)
         //ANIMACION, Desplazamiento de vistas
         super.viewDidAppear(animated)
         
-        UIView.animate(withDuration: 0.5){
+        UIView.animate(withDuration: 0.75){
             self.titleLabel.center.x = self.view.center.x
-            self.userTextField.center.x = self.view.center.x
-            self.passwordTextField.center.x = self.view.center.x
+//            self.userTextField.center.x = self.view.center.x
+//            self.passwordTextField.center.x = self.view.center.x
         }
+        
+        UIView.animate(withDuration: 0.75, delay: 0.3, options: [], animations:
+            {self.userTextField.center.x = self.view.center.x}, completion: nil)
+        
+        UIView.animate(withDuration: 0.5, delay: 0.5, options: [], animations: {self.passwordTextField.center.x = self.view.center.x}, completion: nil)
+        
+        UIView.animate(withDuration: 1.75, delay: 0.0, options: .transitionFlipFromBottom, animations:
+            {self.loginButton.center.y = self.view.center.y - 170}, completion: nil)
+        
+        UIView.animate(withDuration: 2.5, delay: 0.0, options: .transitionFlipFromBottom, animations: {self.registerButton.center.y = self.view.center.y - 120}, completion: nil)
+        
     }
+    
     
     func setupUI() {
         //Button setup

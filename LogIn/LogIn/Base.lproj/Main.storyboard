@@ -58,7 +58,7 @@
                                 <rect key="frame" x="166" y="81" width="65" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
-                                <color key="textColor" red="0.095956335027234538" green="0.24806306907894077" blue="0.65268782383419688" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.77612937176165797" green="0.25842253992407993" blue="0.69552498213834191" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -71,6 +71,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log In" id="Zkm-un-Ioj"/>
                     <connections>
+                        <outlet property="imageView" destination="t1T-Jy-O3J" id="a5k-ld-Jte"/>
                         <outlet property="loginButton" destination="HCq-Wm-fOK" id="63R-nx-ryR"/>
                         <outlet property="passwordTextField" destination="h0m-zR-rU1" id="xAM-fS-mjX"/>
                         <outlet property="registerButton" destination="ShX-xI-31b" id="jMX-2B-evH"/>
