@@ -15,6 +15,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        etiqueta.text = data //Cada que la app cargue, el atributo que haya en data se pondrá en lugar del Label
     }
     
     

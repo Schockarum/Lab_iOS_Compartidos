@@ -63,8 +63,45 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         present(optionMenu, animated: true, completion: nil)
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        return false
+    
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) { // BORRAR COSAS DEL TABLE VIEW
+//        if editingStyle == .delete{
+//            alumnos.remove(at: indexPath.row) //Eliminamos al alúmno del arreglo
+//            tableView.reloadData() //Recargamos la tabla, ahora sin el alumno
+//        }
+//    }
+    
+    /*  DELETES FANCY CON SWIPES  */
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {//Trailing es un sweep de derecha a izquierda; Leading es el de izquierda a derecha
+        let deleteAction = UIContextualAction(style: .destructive, title: "Borrar") { (action, sourceView, completionHandler) in
+                self.alumnos.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            
+                completionHandler(true)
+        }
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return swipeConfiguration
+    }
+    
+    /*  SHARES FANCY CON SWIPES  */
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {//Leading = de derecha a izquierda
+        let shareAction = UIContextualAction(style: .normal, title: "Compartir") { (action, sourceView, completion) in
+            let defaultText = "Reprobando a " + self.alumnos[indexPath.row]
+            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil) // APLICATION ACTIVITIES SON LAS APPS CON QUIEN COMPARTES INFOOO!!!!
+            self.present(activityController, animated: true, completion: nil)
+            completion(true)
+        }
+        
+        shareAction.backgroundColor = .orange
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [shareAction])
+        return swipeConfiguration
+    }
+    
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {//Independientemente del segue, le decimos al view que no lo haga, aunque sí se va a preparar. La razón de poner este alto, es porque mostramos una alerta, depende del resultado de la alerta si hacemos o no el segue.
+        return false //Nel que hace el perform del segue
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
