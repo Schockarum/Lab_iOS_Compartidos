@@ -17,7 +17,7 @@ class RegisterViewController: UIViewController {
         navigationItem.title = "Register"
         
         registerButton.setTitleColor(UIColor.white, for: .normal)
-        registerButton.backgroundColor = UIColor.mainPink()
+        registerButton.backgroundColor = UIColor.mainColor()
         registerButton.layer.cornerRadius = 5.0
         
         correoTextfield.becomeFirstResponder()

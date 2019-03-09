@@ -55,9 +55,9 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.5, delay: 0.5, options: [], animations: {self.passwordTextField.center.x = self.view.center.x}, completion: nil)
         
         UIView.animate(withDuration: 1.75, delay: 0.0, options: .transitionFlipFromBottom, animations:
-            {self.loginButton.center.y = self.view.center.y - 170}, completion: nil)
+            {self.loginButton.center.y = self.view.center.y - 140}, completion: nil)
         
-        UIView.animate(withDuration: 2.5, delay: 0.0, options: .transitionFlipFromBottom, animations: {self.registerButton.center.y = self.view.center.y - 120}, completion: nil)
+        UIView.animate(withDuration: 2.5, delay: 0.0, options: .transitionFlipFromBottom, animations: {self.registerButton.center.y = self.view.center.y - 90}, completion: nil)
         
     }
     
@@ -65,14 +65,15 @@ class ViewController: UIViewController {
     func setupUI() {
         //Button setup
         loginButton.setTitleColor(UIColor.white, for: .normal)
-        loginButton.backgroundColor = UIColor.mainPink()
+        loginButton.backgroundColor = UIColor.mainColor()
+        titleLabel.textColor = UIColor.mainColor()
         
         loginButton.layer.cornerRadius = 5.0
         
         //Button register
-        registerButton.setTitleColor(UIColor.mainPink(), for: .normal)
+        registerButton.setTitleColor(UIColor.accentColor(), for: .normal)
         
-        let imageView = UIImageView(image: UIImage(named: "gitTree"))
+        let imageView = UIImageView(image: UIImage(named: "gitBranch"))
         
         self.view.insertSubview(imageView, at: 0)
         
