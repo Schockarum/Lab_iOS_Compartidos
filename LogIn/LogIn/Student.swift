@@ -1,11 +1,3 @@
-//
-//  Student.swift
-//  LogIn
-//
-//  Created by Abner Castro on 3/1/19.
-//  Copyright © 2019 Abner Castro. All rights reserved.
-//
-
 import Foundation
 
 class Student {
