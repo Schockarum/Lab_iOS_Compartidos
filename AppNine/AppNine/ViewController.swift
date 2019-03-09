@@ -43,7 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { //did select for row at:
-        tableView.deselectRow(at: <#T##IndexPath#>, animated: true) //Con esto se deseleccionan las celdas que tocamos.
+        tableView.deselectRow(at: indexPath, animated: true) //Con esto se deseleccionan las celdas que tocamos.
         
     }
     
