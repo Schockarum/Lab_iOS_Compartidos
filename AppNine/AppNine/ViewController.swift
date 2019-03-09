@@ -37,5 +37,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    //MARK: TableView Delegate
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { //Es para definir el tamaño de las celdas
+        return 60.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { //did select for row at:
+        tableView.deselectRow(at: <#T##IndexPath#>, animated: true) //Con esto se deseleccionan las celdas que tocamos.
+        
+    }
+    
 }
 
