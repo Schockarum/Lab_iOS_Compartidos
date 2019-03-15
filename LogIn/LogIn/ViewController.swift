@@ -9,6 +9,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel! //Vamos a hacer una animación con éste título
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var balloon: UIImageView!
+    @IBOutlet weak var cloud1: UIImageView!
+    @IBOutlet weak var cloud2: UIImageView!
+    
+    
     
     let user = "Mauricio"
     let password = "1234"
@@ -35,6 +40,10 @@ class ViewController: UIViewController {
         loginButton.center.y = view.frame.size.height
         registerButton.center.y = view.frame.size.height
         
+        //animaciones de tarea
+        balloon.frame.origin.y = view.frame.size.height
+        cloud1.frame.origin.x = view.frame.width + cloud1.frame.size.width
+        cloud2.frame.origin.x = view.frame.origin.x - cloud2.frame.size.width
     }
     
     
@@ -59,6 +68,13 @@ class ViewController: UIViewController {
         
         UIView.animate(withDuration: 2.5, delay: 0.0, options: .transitionFlipFromBottom, animations: {self.registerButton.center.y = self.view.center.y - 90}, completion: nil)
         
+        //animacion del globo
+        UIView.animate(withDuration: 5, delay: 0.0, options: .transitionFlipFromBottom, animations: {self.balloon.frame.origin.y = self.view.center.y - 90}, completion: nil)
+        //Animación de la nube1
+        UIView.animate(withDuration: 10, delay: 0, options: .transitionFlipFromLeft, animations: {self.cloud1.frame.origin.x = self.view.frame.origin.x}, completion: nil)
+        //Animacion de la nube 2
+        UIView.animate(withDuration: 8, delay: 0, options: .transitionFlipFromRight, animations: {self.cloud2.frame.origin.x = self.view.frame.size.width - self.cloud2.frame.size.width}, completion: nil)
+        
     }
     
     
@@ -73,7 +89,7 @@ class ViewController: UIViewController {
         //Button register
         registerButton.setTitleColor(UIColor.accentColor(), for: .normal)
         
-        let imageView = UIImageView(image: UIImage(named: "gitBranch"))
+        let imageView = UIImageView(image: UIImage(named: "bg-sunny"))
         
         self.view.insertSubview(imageView, at: 0)
         
