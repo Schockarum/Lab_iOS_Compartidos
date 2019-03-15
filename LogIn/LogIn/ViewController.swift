@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         registerButton.center.y = view.frame.size.height
         
         //animaciones de tarea
-        balloon.frame.origin.y = view.frame.size.height
+        balloon.frame.origin.y = view.frame.size.height - balloon.frame.size.height - 100
         cloud1.frame.origin.x = view.frame.width + cloud1.frame.size.width
         cloud2.frame.origin.x = view.frame.origin.x - cloud2.frame.size.width
         cloud4.frame.origin.x = view.frame.origin.x - cloud4.frame.size.width
@@ -71,15 +71,14 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 2.5, delay: 0.0, options: .transitionFlipFromBottom, animations: {self.registerButton.center.y = self.view.center.y - 90}, completion: nil)
         
         //animacion del globo
-        UIView.animate(withDuration: 5, delay: 0.0, options: .transitionFlipFromBottom, animations: {self.balloon.frame.origin.y = self.view.center.y - 90}, completion: nil)
+        UIView.animate(withDuration: 5, delay: 0.0, options: [.repeat, .autoreverse, .transitionFlipFromBottom], animations: {self.balloon.frame.origin.y = self.view.center.y - 90}, completion: nil)
         //Animación de la nube1
-        UIView.animate(withDuration: 10, delay: 0, options: .transitionFlipFromLeft, animations: {self.cloud1.frame.origin.x = self.view.frame.origin.x}, completion: nil)
+        UIView.animate(withDuration: 10, delay: 0, options: [.repeat, .transitionFlipFromLeft], animations: {self.cloud1.frame.origin.x = self.view.frame.origin.x - self.cloud1.frame.origin.x}, completion: nil)
         //Animacion de la nube 2
-        UIView.animate(withDuration: 8, delay: 0, options: .transitionFlipFromRight, animations: {self.cloud2.frame.origin.x = self.view.frame.size.width - self.cloud2.frame.size.width}, completion: nil)
+        UIView.animate(withDuration: 8, delay: 0, options: [.repeat, .transitionFlipFromRight], animations: {self.cloud2.frame.origin.x = self.view.frame.size.width}, completion: nil)
         //Animacion de la nube 4
         UIView.animate(withDuration: 5, delay: 0, options: .transitionFlipFromRight, animations: {self.cloud4.frame.origin.x = self.view.center.x - self.cloud4.frame.size.width/2}, completion: nil)
     }
-    
     
     func setupUI() {
         //Button setup
