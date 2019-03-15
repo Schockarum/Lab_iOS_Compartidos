@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var balloon: UIImageView!
     @IBOutlet weak var cloud1: UIImageView!
     @IBOutlet weak var cloud2: UIImageView!
+    @IBOutlet weak var cloud4: UIImageView!
     
     
     
@@ -44,6 +45,7 @@ class ViewController: UIViewController {
         balloon.frame.origin.y = view.frame.size.height
         cloud1.frame.origin.x = view.frame.width + cloud1.frame.size.width
         cloud2.frame.origin.x = view.frame.origin.x - cloud2.frame.size.width
+        cloud4.frame.origin.x = view.frame.origin.x - cloud4.frame.size.width
     }
     
     
@@ -74,7 +76,8 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 10, delay: 0, options: .transitionFlipFromLeft, animations: {self.cloud1.frame.origin.x = self.view.frame.origin.x}, completion: nil)
         //Animacion de la nube 2
         UIView.animate(withDuration: 8, delay: 0, options: .transitionFlipFromRight, animations: {self.cloud2.frame.origin.x = self.view.frame.size.width - self.cloud2.frame.size.width}, completion: nil)
-        
+        //Animacion de la nube 4
+        UIView.animate(withDuration: 5, delay: 0, options: .transitionFlipFromRight, animations: {self.cloud4.frame.origin.x = self.view.center.x - self.cloud4.frame.size.width/2}, completion: nil)
     }
     
     

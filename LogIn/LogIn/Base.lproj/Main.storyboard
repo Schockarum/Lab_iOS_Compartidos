@@ -75,6 +75,10 @@
                                 <rect key="frame" x="239" y="403" width="136" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-sunny-cloud-4" translatesAutoresizingMaskIntoConstraints="NO" id="SbP-Yx-ZjT">
+                                <rect key="frame" x="104" y="88" width="167" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -88,6 +92,7 @@
                         <outlet property="balloon" destination="i6L-H9-YI1" id="8fB-L8-aQa"/>
                         <outlet property="cloud1" destination="rNY-oL-8HA" id="xGl-26-nwt"/>
                         <outlet property="cloud2" destination="X66-ae-L9f" id="ZXq-5O-aNX"/>
+                        <outlet property="cloud4" destination="SbP-Yx-ZjT" id="OQa-Fo-YEv"/>
                         <outlet property="imageView" destination="t1T-Jy-O3J" id="a5k-ld-Jte"/>
                         <outlet property="loginButton" destination="HCq-Wm-fOK" id="63R-nx-ryR"/>
                         <outlet property="passwordTextField" destination="h0m-zR-rU1" id="xAM-fS-mjX"/>
@@ -248,6 +253,7 @@
         <image name="balloon" width="50" height="65"/>
         <image name="bg-sunny" width="213.33332824707031" height="378.66665649414062"/>
         <image name="bg-sunny-cloud-2" width="138" height="49"/>
+        <image name="bg-sunny-cloud-4" width="115" height="50"/>
         <image name="face" width="128" height="128"/>
     </resources>
 </document>
