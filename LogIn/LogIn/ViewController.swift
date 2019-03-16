@@ -85,14 +85,12 @@ class ViewController: UIViewController {
         loginButton.setTitleColor(UIColor.white, for: .normal)
         loginButton.backgroundColor = UIColor.mainColor()
         titleLabel.textColor = UIColor.mainColor()
-        
         loginButton.layer.cornerRadius = 5.0
         
         //Button register
         registerButton.setTitleColor(UIColor.accentColor(), for: .normal)
         
         let imageView = UIImageView(image: UIImage(named: "bg-sunny"))
-        
         self.view.insertSubview(imageView, at: 0)
         
     }
@@ -100,6 +98,13 @@ class ViewController: UIViewController {
     
 
     @IBAction func logIn(_ sender: Any) {
+//        guard let profileVC = storyboard?.instantiateViewController(withIdentifier: "profileVC") as? ProfileViewController else { return } //guard nos asegura la creación de algo, caso contrario, hace una cosa distinta para no romper el programa.
+//
+//        let navigationController = UINavigationController(rootViewController: profileVC)
+//
+//        present(navigationController, animated: true, completion: nil)
+        //Guard let te ahorra llaves. If let es similar.
+        
         if userTextField.text == user && passwordTextField.text == password {
             
             if let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "profileVC") as? ProfileViewController {
