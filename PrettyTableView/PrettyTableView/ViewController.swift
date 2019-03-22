@@ -12,8 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var table: UITableView!
     
-    let arrayImages = ["me", "education", "hobbies"]
-    let arrayInfo = ["Mauricio Esparza", "Ingeniería en Computación", "Muchos"]
+    let alumno: [Alumno] = [Alumno(nombre: "Luis Mauricio Esparza Vázquez", carrera: "Ing. en Computación", imagen: "me", hobbies: ["Leer","Dibujar","Música","Videojuegos"])]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +23,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayImages.count
+        return alumno.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {return UITableViewCell()}
         
-        cell.textLabel?.text = arrayInfo[indexPath.row]
-        cell.imageView?.image = UIImage(named: arrayImages[indexPath.row])
+        cell.textLabel?.text = alumno[indexPath.row].nombre
+        cell.imageView?.image = UIImage(named: alumno[indexPath.row].imagen)
         
         cell.backgroundColor = .clear
         cell.textLabel?.textColor = .white
@@ -44,6 +43,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //Agrandar celdas
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let indexPath = table.indexPathForSelectedRow
+        
+        let secondView = segue.destination as? SecondViewController
+        
+        secondView?.alumno = alumno[indexPath!.row]
     }
     
 }
