@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xzu-bw-W4s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OF9-Ls-nUB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Collection View Controller-->
+        <!-- \ o /-->
         <scene sceneID="4cS-rJ-6b6">
             <objects>
                 <collectionViewController id="Xzu-bw-W4s" customClass="MyCollectionViewController" customModule="UICollectionView" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,10 +68,41 @@
                             <outlet property="delegate" destination="Xzu-bw-W4s" id="EBF-br-Ud2"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title=" \ o /" id="sw7-8V-lfr">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="horizontal" id="ijO-ze-tGO">
+                            <connections>
+                                <action selector="giraPantalla:" destination="Xzu-bw-W4s" id="2h4-cF-5eO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="botonGiro" destination="ijO-ze-tGO" id="rFZ-im-eCW"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2t-7N-nm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-47" y="-715"/>
+            <point key="canvasLocation" x="892" y="-715.59220389805103"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AGa-xl-Gb9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OF9-Ls-nUB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UtD-wo-nmc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xzu-bw-W4s" kind="relationship" relationship="rootViewController" id="lK9-Rb-e3n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VL6-aA-wsz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-47.200000000000003" y="-715.59220389805103"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="horizontal" width="36" height="36"/>
+    </resources>
 </document>
