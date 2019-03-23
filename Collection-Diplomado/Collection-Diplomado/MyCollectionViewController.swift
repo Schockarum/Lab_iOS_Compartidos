@@ -12,7 +12,7 @@ private let reuseIdentifier = "MiCelda"
 
 class MyCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-    var imageFiles = [String]()
+    var imageNames = [String]()
     var images = [UIImage]()
     let defaultSize = CGSize(width: 200, height: 321)
     
@@ -23,7 +23,7 @@ class MyCollectionViewController: UICollectionViewController, UICollectionViewDe
     }
     
     func cargaImagenes(){
-        imageFiles = ["j1",
+        imageNames = ["j1",
                       "j2",
                       "j3",
                       "j4",
@@ -41,23 +41,28 @@ class MyCollectionViewController: UICollectionViewController, UICollectionViewDe
                       "j16",
                       "j17"]
         
-        for fileName in imageFiles{
+        for fileName in imageNames{
             if let image = UIImage(named: fileName){
                 images.append(image)
             }
         }
     }
 
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return defaultSize
     }
     
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let myLayout = UICollectionViewFlowLayout()
         
-        myLayout.scrollDirection = .horizontal
+        //Girar el layout al picar una celda
+//        let myLayout = UICollectionViewFlowLayout()
+//        myLayout.scrollDirection = .horizontal
+//        collectionView.setCollectionViewLayout(myLayout, animated: true)
+        collectionView.cellForItem(at: indexPath)
         
-        collectionView.setCollectionViewLayout(myLayout, animated: true)
+        
     }
     
     
@@ -72,6 +77,7 @@ class MyCollectionViewController: UICollectionViewController, UICollectionViewDe
         return header
     }
     
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -83,13 +89,17 @@ class MyCollectionViewController: UICollectionViewController, UICollectionViewDe
         return images.count
     }
 
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MyCollectionViewCell
     
         // Configure the cell
-        
         cell.imageView.image = images[indexPath.row]
         
         return cell
+    }
+    
+    func growCell(){
+        
     }
 }

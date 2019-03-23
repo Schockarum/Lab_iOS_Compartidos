@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         return b
     }()
     
+    @IBOutlet weak var botoncito: BotonIB! //desde el interface builder
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,5 +35,8 @@ class ViewController: UIViewController {
         print("click")
     }
     
+    @IBAction func ejecuta(_ sender: Any) {
+        botoncito.shake()
+    }
 }
 
