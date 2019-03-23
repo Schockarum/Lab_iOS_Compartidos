@@ -10,4 +10,6 @@ import UIKit
 
 class MySupplementaryView: UICollectionReusableView {
         
+    @IBOutlet weak var headerLabel: NSLayoutConstraint!
+    
 }

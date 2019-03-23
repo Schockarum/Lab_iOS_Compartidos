@@ -15,7 +15,7 @@ class MyCollectionViewController: UICollectionViewController, UICollectionViewDe
     var imageFiles = [String]() //Manaje el arreglo, aqui van los nombres
     var images = [UIImage]() //Maneja las imágenes cargadas sacadas de los nombres
     let defaultSize = CGSize(width: 200, height: 321)
-    @IBOutlet weak var botonGiro: UIBarButtonItem!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,15 +54,22 @@ class MyCollectionViewController: UICollectionViewController, UICollectionViewDe
     //acciones cuando se toca una imagen de alguna celda
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let myLayout = UICollectionViewFlowLayout()
-//
-//        if botonGiro.image == UIImage(named: "vertical"){
-//            botonGiro.image = UIImage(named: "horizontal")
+        
             myLayout.scrollDirection = .horizontal
-//        }else{
-//            botonGiro.image = UIImage(named: "vertical")
-//            myLayout.scrollDirection = .vertical
-//        }
 
+        collectionView.setCollectionViewLayout(myLayout, animated: true)
+        
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        var header = MySupplementaryView()
+        
+        if kind == UICollectionView.elementKindSectionHeader{
+            header = (collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "myHeader", for: indexPath)) as? MySupplementaryView)!
+        }
+        
+        header.headerLabel.text = "Galeria"
+        return header
     }
     
     func cargaImagenes(){
@@ -75,9 +82,5 @@ class MyCollectionViewController: UICollectionViewController, UICollectionViewDe
         }
     }
     
-    //Cuando se toque el botón del navigation, debe girar el layout
-//    @IBAction func giraPantalla(_ sender: UIBarButtonItem, _ collectionView: ) {
-//
-//    }
-//
+ 
 }

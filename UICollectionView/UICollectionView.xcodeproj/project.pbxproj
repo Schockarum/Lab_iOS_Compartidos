@@ -15,6 +15,7 @@
 		7D0EE93022468726005B8D75 /* UICollectionViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0EE92F22468726005B8D75 /* UICollectionViewUITests.swift */; };
 		7D0EE94022468B6D005B8D75 /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0EE93F22468B6D005B8D75 /* MyCollectionViewController.swift */; };
 		7D0EE942224694E7005B8D75 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0EE941224694E7005B8D75 /* MyCollectionViewCell.swift */; };
+		7DCF10842246A50D005EE298 /* MySupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF10832246A50D005EE298 /* MySupplementaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		7D0EE93122468726005B8D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D0EE93F22468B6D005B8D75 /* MyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewController.swift; sourceTree = "<group>"; };
 		7D0EE941224694E7005B8D75 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		7DCF10832246A50D005EE298 /* MySupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySupplementaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				7D0EE91B22468726005B8D75 /* Info.plist */,
 				7D0EE93F22468B6D005B8D75 /* MyCollectionViewController.swift */,
 				7D0EE941224694E7005B8D75 /* MyCollectionViewCell.swift */,
+				7DCF10832246A50D005EE298 /* MySupplementaryView.swift */,
 			);
 			path = UICollectionView;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				7D0EE94022468B6D005B8D75 /* MyCollectionViewController.swift in Sources */,
 				7D0EE91022468724005B8D75 /* AppDelegate.swift in Sources */,
+				7DCF10842246A50D005EE298 /* MySupplementaryView.swift in Sources */,
 				7D0EE942224694E7005B8D75 /* MyCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
