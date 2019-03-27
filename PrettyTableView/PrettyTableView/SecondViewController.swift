@@ -23,7 +23,11 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         table.delegate = self
         table.dataSource = self
         atributos = alumno.alumnoToArray(alumno: alumno)//[nombre,carrera,imagen,hobbies]
+        //La siguiente parte es fea, jalo la imágen del índice 2 y después quito ese índice
         imagen.image = UIImage(named: atributos[2])
+        atributos.remove(at: 2)
+        
+        //El fondo debe ser el gradiente
         imageBackground.image = UIImage(named: "uGa83RG")
     }
     
@@ -33,14 +37,9 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell") else {return UITableViewCell()}
-        if indexPath.row == 2{
-            cell.textLabel?.text = ""
-            cell.backgroundColor = .clear
-        }else{
-            cell.textLabel?.text = atributos[indexPath.row]
         
+        cell.textLabel?.text = atributos[indexPath.row]
         cell.backgroundColor = .clear
-        }
         return cell
     }
 }
