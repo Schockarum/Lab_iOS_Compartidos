@@ -25,11 +25,6 @@ class CartModalViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
     }
     
     //Acciones
@@ -37,6 +32,16 @@ class CartModalViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func removeFromCart(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Wait!", message: "Remove product from cart?",     preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "Remove it 😞", style: .default, handler: { (action) in
+            self.productListCartControl.cart.productList.remove(at: sender.tag) //Sender tag lo igualamos al indexpath.row en la creacion de la celda, por eso es posible!!!!
+            self.tableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+        }))    }
+
 }
 
 //Implementaciones del tableview en extensión
@@ -46,15 +51,22 @@ extension CartModalViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         //ref de view -> su carrito -> elemento del carrito ; (Product, Qty, Subt) -> Producto
-        let product = productListCartControl.cart.productList[indexPath.row]
-        
+        let product = self.productListCartControl.cart.productList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "modalCartCell") as! CartCell
-        
         //propiedades de la celda se modifican en su clase
         cell.placeCartProduct(cartProduct: product.0, quantity: product.1, subtotal: product.2)
         
+        //SALVA VIDAS!!! CADA BOTON TIENE ASOCIADO EL INDEXPATH DE SU CELDA
+        cell.removeFromCartButton.tag = indexPath.row
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
     }
 }

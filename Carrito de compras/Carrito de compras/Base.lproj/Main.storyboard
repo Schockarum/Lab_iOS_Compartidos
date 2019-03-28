@@ -219,6 +219,9 @@
                                                         <constraint firstAttribute="width" constant="35" id="ld6-GM-iMn"/>
                                                     </constraints>
                                                     <state key="normal" title="Button" image="black remove cart"/>
+                                                    <connections>
+                                                        <action selector="removeFromCart:" destination="rlz-1o-c8a" eventType="touchUpInside" id="JCB-7h-jXN"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTe-ZJ-xS6">
                                                     <rect key="frame" x="126" y="82" width="276" height="18"/>
@@ -264,6 +267,7 @@
                                             <outlet property="productQuantityLabel" destination="jTe-ZJ-xS6" id="Grb-ob-Qw9"/>
                                             <outlet property="productSubtotalLabel" destination="sBv-tg-LoJ" id="z2l-FH-WKi"/>
                                             <outlet property="productTitleLabel" destination="8Ib-2S-3E4" id="TU3-yb-rZa"/>
+                                            <outlet property="removeFromCartButton" destination="Fih-wO-Igs" id="3Qd-b8-8zW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

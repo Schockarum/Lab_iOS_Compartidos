@@ -15,7 +15,7 @@ class CartCell: UITableViewCell {
     @IBOutlet weak var productPrizeLabel: UILabel!
     @IBOutlet weak var productQuantityLabel: UILabel!
     @IBOutlet weak var productSubtotalLabel: UILabel!
-    
+    @IBOutlet weak var removeFromCartButton: UIButton!
     
     //propiedades de la celda
     func placeCartProduct(cartProduct: Product, quantity: Int, subtotal: Int){
@@ -24,9 +24,11 @@ class CartCell: UITableViewCell {
         self.productPrizeLabel.text = "Price: $" + String(cartProduct.price) + ".ºº"
         self.productQuantityLabel.text = "Qty: " + String(quantity)
         self.productSubtotalLabel.text = "Subtotal: $" + String(subtotal) + ".ºº"
+        self.removeFromCartButton.imageView?.image = UIImage(named: "black remove cart")
         
         self.backgroundColor = .clear
         self.productTitleLabel.textColor = .white
         self.productPrizeLabel.textColor = .white
     }
+    
 }
