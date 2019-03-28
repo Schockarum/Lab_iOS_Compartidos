@@ -22,6 +22,7 @@
 		7D6F00B4224B1F1300085ACF /* PurchaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F00B3224B1F1300085ACF /* PurchaseButton.swift */; };
 		7DDA175C224C5EFB00444A3D /* RegularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDA175B224C5EFB00444A3D /* RegularButton.swift */; };
 		7DDA175E224C62B800444A3D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDA175D224C62B800444A3D /* Extensions.swift */; };
+		7DDA1760224C866900444A3D /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDA175F224C866900444A3D /* CartCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		7D6F00B3224B1F1300085ACF /* PurchaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseButton.swift; sourceTree = "<group>"; };
 		7DDA175B224C5EFB00444A3D /* RegularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularButton.swift; sourceTree = "<group>"; };
 		7DDA175D224C62B800444A3D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7DDA175F224C866900444A3D /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				7D6F00AE224B0C0400085ACF /* CartModalViewController.swift */,
+				7DDA175F224C866900444A3D /* CartCell.swift */,
 			);
 			path = "Cart Info Modal";
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				7DDA175E224C62B800444A3D /* Extensions.swift in Sources */,
 				7D384A15224AB9BE003066FA /* Product.swift in Sources */,
 				7D6F00AC224B0B8700085ACF /* ProductDetailViewController.swift in Sources */,
+				7DDA1760224C866900444A3D /* CartCell.swift in Sources */,
 				7D3849E3224AA924003066FA /* AppDelegate.swift in Sources */,
 				7D6F00AF224B0C0400085ACF /* CartModalViewController.swift in Sources */,
 				7D384A11224AA9BE003066FA /* ItemSaleList.swift in Sources */,

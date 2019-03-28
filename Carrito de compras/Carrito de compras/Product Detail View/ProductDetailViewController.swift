@@ -56,6 +56,7 @@ class ProductDetailViewController: UIViewController {
         if cantidad < 99{
             cantidad += 1
             quantityTextField.text = String(cantidad)
+            productPrice.text = "$" + String(product.price * cantidad) + ".ºº"
         }
     }
     
@@ -63,6 +64,7 @@ class ProductDetailViewController: UIViewController {
         if cantidad > 1{
             cantidad -= 1
             quantityTextField.text = String(cantidad)
+            productPrice.text = "$" + String(product.price * cantidad) + ".ºº"
         }
     }
     

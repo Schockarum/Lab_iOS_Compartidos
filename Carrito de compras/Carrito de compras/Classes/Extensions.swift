@@ -17,7 +17,7 @@ extension UIColor{
     
     
     func mainOrangeColor() -> UIColor{
-        return UIColor(red: 1.0, green: 0.2, blue: 0.2, alpha: 1)
+        return UIColor(red: 1.0, green: 0.741, blue: 0.02, alpha: 1)
     }
     
     func accentColdGray() -> UIColor{

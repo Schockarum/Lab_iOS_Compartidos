@@ -14,12 +14,6 @@ class ShoppingCart{
     var productList: [(Product, Int, Int)] //Lista: (producto,cantidad,subtotal)
     var total: Int
     
-//    init(product: Product, quantity: Int) {
-//        self.productList = []
-//        self.productList.append((product, quantity, (product.price * quantity)))
-//        self.total = product.price * quantity
-//    }
-    
     init() {
         self.productList = []
         self.total = 0
