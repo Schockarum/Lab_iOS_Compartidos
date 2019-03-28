@@ -26,7 +26,11 @@ class ShoppingCart{
     }
     
     func countCartItems(cart: ShoppingCart) -> Int{
-        return productList.count
+        var total = 0
+        for item in productList{
+            total += item.1
+        }
+        return total
     }
     
     func calculateTotal(cart: ShoppingCart) -> Int{

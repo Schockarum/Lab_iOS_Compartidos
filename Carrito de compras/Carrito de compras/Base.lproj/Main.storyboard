@@ -210,10 +210,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piG-aX-oao" customClass="PurchaseButton" customModule="Carrito_de_compras" customModuleProvider="target">
-                                <rect key="frame" x="50" y="738" width="314" height="40"/>
+                                <rect key="frame" x="50" y="728" width="314" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="6hc-7Z-yGg"/>
+                                    <constraint firstAttribute="height" constant="50" id="6hc-7Z-yGg"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <state key="normal" title="¡Agregar al carrito!"/>
                                 <connections>
                                     <action selector="addToCart:" destination="cwN-re-3LV" eventType="touchUpInside" id="iUQ-En-HwG"/>
@@ -230,13 +231,50 @@
                                     <action selector="returnToProductList:" destination="cwN-re-3LV" eventType="touchUpInside" id="6AZ-4u-EKd"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qar-wa-fNx">
+                                <rect key="frame" x="187" y="653" width="40" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="bXt-xd-hoN"/>
+                                    <constraint firstAttribute="width" constant="40" id="wZy-Qo-hUw"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cr3-GT-Rjy" customClass="RegularButton" customModule="Carrito_de_compras" customModuleProvider="target">
+                                <rect key="frame" x="230" y="654" width="60" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="pRP-SJ-biO"/>
+                                    <constraint firstAttribute="width" constant="60" id="ukp-kd-fBE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="addOneMore:" destination="cwN-re-3LV" eventType="touchUpInside" id="3Ki-aW-cFS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3J-ww-0ab" customClass="RegularButton" customModule="Carrito_de_compras" customModuleProvider="target">
+                                <rect key="frame" x="124" y="653" width="60" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="GjP-NG-LeO"/>
+                                    <constraint firstAttribute="width" constant="60" id="emY-AV-KHh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="removeOne:" destination="cwN-re-3LV" eventType="touchUpInside" id="xzD-f8-hsh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Cr3-GT-Rjy" firstAttribute="leading" secondItem="Qar-wa-fNx" secondAttribute="trailing" constant="3" id="1hy-rl-QQu"/>
                             <constraint firstItem="vRz-bY-VMV" firstAttribute="trailing" secondItem="EME-iA-KzO" secondAttribute="trailing" constant="30" id="3YF-oS-frW"/>
+                            <constraint firstItem="U3J-ww-0ab" firstAttribute="top" secondItem="Qar-wa-fNx" secondAttribute="top" id="3hz-89-b3L"/>
                             <constraint firstItem="PXz-Kr-GJo" firstAttribute="top" secondItem="kLJ-W2-JKS" secondAttribute="bottom" constant="30" id="4ky-yb-7HV"/>
                             <constraint firstItem="EME-iA-KzO" firstAttribute="centerX" secondItem="Z7Q-5Z-rYn" secondAttribute="centerX" id="9SO-WA-vde"/>
                             <constraint firstItem="kLJ-W2-JKS" firstAttribute="centerX" secondItem="Z7Q-5Z-rYn" secondAttribute="centerX" id="9id-A6-KFN"/>
+                            <constraint firstItem="Qar-wa-fNx" firstAttribute="centerX" secondItem="Z7Q-5Z-rYn" secondAttribute="centerX" id="DHf-f5-0K6"/>
                             <constraint firstItem="EME-iA-KzO" firstAttribute="top" secondItem="PXz-Kr-GJo" secondAttribute="bottom" constant="15" id="KnR-L1-7pD"/>
                             <constraint firstItem="kLJ-W2-JKS" firstAttribute="top" secondItem="vRz-bY-VMV" secondAttribute="top" constant="30" id="Lg3-fK-PpB"/>
                             <constraint firstItem="PXz-Kr-GJo" firstAttribute="centerX" secondItem="Z7Q-5Z-rYn" secondAttribute="centerX" id="Rzi-Od-kqG"/>
@@ -244,7 +282,10 @@
                             <constraint firstItem="piG-aX-oao" firstAttribute="centerX" secondItem="Z7Q-5Z-rYn" secondAttribute="centerX" id="bLl-P5-XTS"/>
                             <constraint firstItem="PXz-Kr-GJo" firstAttribute="leading" secondItem="vRz-bY-VMV" secondAttribute="leading" constant="15" id="cWQ-R3-DmC"/>
                             <constraint firstItem="vRz-bY-VMV" firstAttribute="bottom" secondItem="piG-aX-oao" secondAttribute="bottom" constant="35" id="ciD-O3-A6X"/>
+                            <constraint firstItem="piG-aX-oao" firstAttribute="top" secondItem="Qar-wa-fNx" secondAttribute="bottom" constant="30" id="eTo-M2-zqW"/>
+                            <constraint firstItem="U3J-ww-0ab" firstAttribute="baseline" secondItem="Cr3-GT-Rjy" secondAttribute="baseline" id="emg-AL-4IL"/>
                             <constraint firstItem="vRz-bY-VMV" firstAttribute="trailing" secondItem="FV4-ua-uAh" secondAttribute="trailing" constant="15" id="is8-Bt-t5c"/>
+                            <constraint firstItem="Qar-wa-fNx" firstAttribute="leading" secondItem="U3J-ww-0ab" secondAttribute="trailing" constant="3" id="ldc-wz-ak0"/>
                             <constraint firstItem="vRz-bY-VMV" firstAttribute="trailing" secondItem="PXz-Kr-GJo" secondAttribute="trailing" constant="15" id="n81-4J-1vd"/>
                             <constraint firstItem="piG-aX-oao" firstAttribute="leading" secondItem="vRz-bY-VMV" secondAttribute="leading" constant="50" id="pyz-Sj-RsS"/>
                             <constraint firstItem="vRz-bY-VMV" firstAttribute="trailing" secondItem="piG-aX-oao" secondAttribute="trailing" constant="50" id="raW-zd-xo0"/>
@@ -256,6 +297,7 @@
                         <outlet property="productImage" destination="kLJ-W2-JKS" id="XNF-U0-zsQ"/>
                         <outlet property="productPrice" destination="EME-iA-KzO" id="s1O-WW-Byg"/>
                         <outlet property="productTitle" destination="PXz-Kr-GJo" id="TDU-eh-28b"/>
+                        <outlet property="quantityTextField" destination="Qar-wa-fNx" id="h50-U8-zI4"/>
                         <outlet property="returnButton" destination="FV4-ua-uAh" id="wQv-ts-3A8"/>
                     </connections>
                 </viewController>

@@ -1,23 +1,22 @@
 //
-//  PurchaseButton.swift
+//  RegularButton.swift
 //  Carrito de compras
 //
-//  Created by Luis Mauricio Esparza Vazquez on 3/26/19.
+//  Created by Luis Mauricio Esparza Vazquez on 3/27/19.
 //  Copyright © 2019 Schock. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class PurchaseButton: UIButton{
+class RegularButton: UIButton{
     
-    var color: UIColor = .red
+    var color: UIColor = .blue
     
     override func awakeFromNib() {
-        backgroundColor = color.mainOrangeColor()
-        titleLabel?.text = "¡Agregar al carrito!"
+        backgroundColor = color.accentColdGray()
         setTitleColor(.white, for: .normal)
-        layer.cornerRadius = 15
+        layer.cornerRadius = 5
     }
     
     func shake(){
