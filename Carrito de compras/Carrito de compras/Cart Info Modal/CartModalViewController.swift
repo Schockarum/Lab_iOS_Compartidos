@@ -11,8 +11,12 @@ import UIKit
 class CartModalViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bottomView: UIView!
     
     var productListCartControl: ItemSaleList! //Para inyectar código
+    @IBOutlet weak var itemsInCartLabel: UILabel!
+    @IBOutlet weak var cartTotalLabel: UILabel!
+    @IBOutlet weak var purchaseButton: PurchaseButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +29,16 @@ class CartModalViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        itemsInCartLabel.text = "Items: " + String(productListCartControl.cart.countCartItems(cart: productListCartControl.cart))
+        cartTotalLabel.text = "Total: $" + String(productListCartControl.cart.calculateTotal(cart: productListCartControl.cart)) + ".ºº"
+        bottomView.backgroundColor = .clear
+        
+        if productListCartControl.cart.countCartItems(cart: productListCartControl.cart) == 0{
+            purchaseButton.isHidden = true
+        }
+        tableView.separatorColor = .clear
+        
     }
     
     //Acciones
@@ -38,6 +52,8 @@ class CartModalViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Remove it 😞", style: .default, handler: { (action) in
             self.productListCartControl.cart.productList.remove(at: sender.tag) //Sender tag lo igualamos al indexpath.row en la creacion de la celda, por eso es posible!!!!
             self.tableView.reloadData()
+            self.setupUI()
+
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
         }))    }
@@ -56,6 +72,7 @@ extension CartModalViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "modalCartCell") as! CartCell
         //propiedades de la celda se modifican en su clase
         cell.placeCartProduct(cartProduct: product.0, quantity: product.1, subtotal: product.2)
+        
         
         //SALVA VIDAS!!! CADA BOTON TIENE ASOCIADO EL INDEXPATH DE SU CELDA
         cell.removeFromCartButton.tag = indexPath.row
