@@ -11,10 +11,10 @@ import UIKit
 
 class PurchaseButton: UIButton{
     
-    @IBInspectable var color: UIColor = .red
+    var color: UIColor = .red
     
     override func awakeFromNib() {
-        backgroundColor = .red
+        backgroundColor = color.mainOrangeColor()
         titleLabel?.text = "¡Agregar al carrito!"
         setTitleColor(.white, for: .normal)
         layer.cornerRadius = 15

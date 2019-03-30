@@ -34,7 +34,6 @@ class ItemSaleList: UIViewController{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        cart.printCarContents(cart: cart)
         itemsInCart = cart.countCartItems(cart: cart)
         cartTotal = cart.calculateTotal(cart: cart)
         itemsInCartLabel.text = "Items: " + String(itemsInCart)
@@ -102,6 +101,9 @@ class ItemSaleList: UIViewController{
             let productView = segue.destination as? ProductDetailViewController
             productView?.product = products[indexPath!.row]
             productView?.productListCartControl = self //Referencia de éste view p/inyección
+        case "toCartInfo":
+            let cartView = segue.destination as? CartModalViewController
+            cartView?.productListCartControl = self //Inyecciones ftw \o/
         default:
             print("¡Oh, Neptuno!")
         }
@@ -126,5 +128,9 @@ extension ItemSaleList: UITableViewDataSource, UITableViewDelegate{
         //propiedades de la celda se modifican en su clase
         cell.placeProduct(product: product)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

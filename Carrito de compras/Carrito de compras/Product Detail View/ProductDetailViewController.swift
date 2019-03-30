@@ -14,9 +14,11 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var productTitle: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var returnButton: UIButton!
+    @IBOutlet weak var quantityTextField: UITextField!
     
     var product = Product(image: UIImage(named: "hipster gradient")!, title: "This is not supposed to appear", price: 9001) //Si ésto aparece, 'c bale yorar, po fabo'.
     var productListCartControl: ItemSaleList! //Para inyectar código
+    var cantidad: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,8 @@ class ProductDetailViewController: UIViewController {
         //Nociero, le ponemos un tache dificil de ver para que sí escape :(
         returnButton.setTitle("x", for: .normal)
         returnButton.tintColor = .lightGray
+        
+        quantityTextField.text = String(cantidad)
     }
     
     //Acciones
@@ -42,10 +46,27 @@ class ProductDetailViewController: UIViewController {
     
     @IBAction func addToCart(_ sender: PurchaseButton) {
         //Cuando agreguemos algo al coche, añadimos a la lista del 1º view el producto, cantidad y subtotal
-        #warning("Tenemos un placeholder, hay que encontrar el modo de implementar un contador de cantidad actualizable en la pantalla de compra")
-        productListCartControl.cart.productList.append((product, 1, product.price * 1))
+        productListCartControl.cart.productList.append((product, cantidad, product.price * cantidad))
         //Si ya se agregó al carrito, regresamos.
         navigationController?.isNavigationBarHidden = false
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func addOneMore(_ sender: Any) {
+        if cantidad < 99{
+            cantidad += 1
+            quantityTextField.text = String(cantidad)
+            productPrice.text = "$" + String(product.price * cantidad) + ".ºº"
+        }
+    }
+    
+    @IBAction func removeOne(_ sender: Any) {
+        if cantidad > 1{
+            cantidad -= 1
+            quantityTextField.text = String(cantidad)
+            productPrice.text = "$" + String(product.price * cantidad) + ".ºº"
+        }
+    }
+    
+    
 }

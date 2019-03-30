@@ -14,19 +14,17 @@ class ShoppingCart{
     var productList: [(Product, Int, Int)] //Lista: (producto,cantidad,subtotal)
     var total: Int
     
-//    init(product: Product, quantity: Int) {
-//        self.productList = []
-//        self.productList.append((product, quantity, (product.price * quantity)))
-//        self.total = product.price * quantity
-//    }
-    
     init() {
         self.productList = []
         self.total = 0
     }
     
     func countCartItems(cart: ShoppingCart) -> Int{
-        return productList.count
+        var total = 0
+        for item in productList{
+            total += item.1
+        }
+        return total
     }
     
     func calculateTotal(cart: ShoppingCart) -> Int{
