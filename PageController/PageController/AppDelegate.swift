@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  PageController
 //
-//  Created by Luis Mauricio Esparza Vazquez on 3/29/19.
-//  Copyright © 2019 Schock. All rights reserved.
+//  Created by José Antonio Arellano Mendoza on 3/29/19.
+//  Copyright © 2019 José Antonio Arellano Mendoza. All rights reserved.
 //
 
 import UIKit
